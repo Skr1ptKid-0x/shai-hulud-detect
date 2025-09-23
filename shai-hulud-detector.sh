@@ -5,6 +5,7 @@
 # Usage: ./shai-hulud-detector.sh <directory_to_scan>
 
 set -eo pipefail
+if [ "$(id -u)" -eq 0 ]; then echo "Do not run as root"; exit 1; fi
 
 # Color codes for output
 RED='\033[0;31m'
